@@ -1,0 +1,286 @@
+export type Product = {
+  id: string;
+  name: string;
+  dosageForm: string;
+  composition: string;
+};
+
+export type ProductCategory = {
+  slug: string;
+  name: string;
+  products: Product[];
+};
+
+const p = (id: string, name: string, dosageForm: string, composition: string): Product => ({
+  id, name, dosageForm, composition,
+});
+
+export const PRODUCT_CATEGORIES: ProductCategory[] = [
+  {
+    slug: 'antibacterial',
+    name: 'Antibacterial',
+    products: [
+      p('amikacin-sulphate', 'Amikacin Sulphate', 'Injection', '100 mg, 250 mg, 500 mg per 2 ml'),
+      p('amoxicillin-cloxacillin', 'Amoxicillin Sodium + Cloxacillin Sodium', 'Capsule', '250 mg + 250 mg'),
+      p('amoxicillin-trihydrate', 'Amoxicillin Trihydrate', 'Capsule', '250 mg; 500 mg'),
+      p('azithromycin-dihydrate-tablet', 'Azithromycin Dihydrate', 'Tablet', '120 mg, 250 mg, 500 mg'),
+      p('azithromycin-dihydrate-suspension', 'Azithromycin Dihydrate', 'Dry Powder Oral Suspension', '100 mg and 200 mg per 5 ml'),
+      p('cefepime-suspension', 'Cefepime Hydrochloride', 'Dry Powder Oral Suspension', '500 mg, 1000 mg, 2000 mg'),
+      p('cefepime-tablet', 'Cefepime Hydrochloride', 'Tablet', '200 mg; 400 mg'),
+      p('cefixime-cloxacillin-lab', 'Cefixime + Cloxacillin Sodium + Lactic Acid Bacillus (90 Million Spores)', 'Tablet', '100 mg + 500 mg, 200 mg + 500 mg'),
+      p('cefoperazone-sodium', 'Cefoperazone Sodium', 'Dry Powder Injection', '500 mg + 500 mg, 1000 mg + 500 mg, 1 g + 1 g'),
+      p('cefotaxime-sodium', 'Cefotaxime Sodium', 'Dry Powder Injection', '500 mg, 1000 mg'),
+      p('cefpirome-sulfate', 'Cefpirome Sulfate', 'Dry Powder Injection', '500 mg, 1000 mg'),
+      p('cefpodoxime', 'Cefpodoxime', 'Tablet', '100 mg; 200 mg; 400 mg'),
+      p('ceftriaxone-sodium', 'Ceftriaxone Sodium', 'Dry Powder Injection', '250 mg, 500 mg, 1000 mg'),
+      p('ceftriaxone-sulbactam', 'Ceftriaxone Sodium + Sulbactam Sodium', 'Dry Powder Injection', '1000 mg + 500 mg, 500 mg + 250 mg'),
+      p('ceftriaxone-tazobactam', 'Ceftriaxone Sodium + Tazobactam Sodium', 'Dry Powder Injection', '500 mg + 125 mg'),
+      p('cefuroxime-axetil-tablet', 'Cefuroxime Axetil', 'Tablet', '250 mg; 500 mg'),
+      p('cefuroxime-sodium', 'Cefuroxime Sodium', 'Dry Powder Oral Suspension', '125 mg, 250 mg, 1000 mg'),
+      p('cefuroxime-axetil-suspension', 'Cefuroxime Axetil', 'Dry Oral Suspension', '125 mg/5 ml, 250 mg/5 ml'),
+      p('ciprofloxacin', 'Ciprofloxacin Hydrochloride', 'Tablet', '250 mg, 500 mg and 750 mg'),
+      p('clarithromycin', 'Clarithromycin', 'Tablet', '250 mg and 500 mg'),
+      p('doxycycline-mono', 'Doxycycline Monohydrate', 'Capsule', '100 mg; 200 mg'),
+      p('gentamycin', 'Gentamycin Sulphate', 'Injection', '40 mg'),
+      p('erythromycin-tablet', 'Erythromycin Stearate', 'Tablet/Capsule', '250 mg, 500 mg'),
+      p('erythromycin-suspension', 'Erythromycin Stearate', 'Suspension', '125 mg and 250 mg per 5 ml'),
+      p('levofloxacin', 'Levofloxacin', 'Tablet', '250 mg, 500 mg'),
+      p('lincomycin', 'Lincomycin Hydrochloride', 'Injection', '300 mg/ml'),
+      p('meropenem-carbonate', 'Meropenem + Sodium Carbonate', 'Dry Powder Injection', '500 mg + 45.1 mg, 1000 mg + 90.2 mg'),
+      p('ofloxacin', 'Ofloxacin', 'Tablet and Suspension', '200 mg, 400 mg; 50 mg/5 ml'),
+      p('cefepime-sulbactam', 'Cefepime + Sulbactam', 'Injection', '1.5 gm Injection'),
+      p('cefazoline', 'Cefazoline', 'Injection', '500 mg and 1000 mg'),
+      p('cefoparazone', 'Cefoparazone', 'Injection', '500mg, 1000 mg and 2000 mg'),
+      p('piperacillin-tazobactam', 'Piperacillin and Tazobactam', 'Injection', '2250 mg and 4500 mg'),
+      p('norfloxacin-ornidazole', 'Norfloxacin + Ornidazole', 'Tablet', '400 mg + 500 mg'),
+      p('norfloxacin-tinidazole', 'Norfloxacin + Tinidazole', 'Tablet', '400 mg + 600 mg'),
+      p('ofloxacin-ornidazole', 'Ofloxacin + Ornidazole', 'Tablet', '400 mg + 600 mg'),
+    ],
+  },
+  {
+    slug: 'antimalarial',
+    name: 'Antimalarial',
+    products: [
+      p('artesunate', 'Artesunate', 'Tablet', '50 mg'),
+      p('artemether-ampoule', 'Artemether', 'Ampoule', '40 mg/ml, 80 mg/ml'),
+      p('chloroquine-primaquine', 'Chloroquine Phosphate + Primaquine', 'Tablet', '500 mg + 25 mg'),
+      p('mefloquine', 'Mefloquine', 'Tablet', '250 mg'),
+      p('sulfadoxine-pyrimethamine', 'Sulfadoxine + Pyrimethamine', 'Tablet; Suspension', '500 mg + 25 mg, 750 mg + 37.5 mg; 250 mg + 12.5 mg/5 ml'),
+      p('arteether', 'α-β Arteether', 'Injection', '75 mg/ml'),
+      p('artemether-lumefantrine', 'Artemether + Lumefantrine', 'Tablet', '20 mg+120 mg; 40 mg + 240 mg and 80 mg+480 mg'),
+    ],
+  },
+  {
+    slug: 'antituberculosis',
+    name: 'Antituberculosis',
+    products: [
+      p('ethambutol', 'Ethambutol', 'Tablet', '400 mg, 600 mg, 800 mg'),
+      p('rifampicin', 'Rifampicin', 'Tablet/Capsule', '450 mg, 600 mg'),
+    ],
+  },
+  {
+    slug: 'antiemetic-ppis',
+    name: 'Antiemetic & PPIs',
+    products: [
+      p('pantoprazole-domperidone', 'Pantoprazole + Domperidone SR', 'Capsule', '40 mg + 30 Mg'),
+      p('rabriprazole-domperidone', 'Rabriprazole Sodium + Domperidone SR', 'Capsule', '20 Mg + 30 Mg'),
+      p('ondansetron', 'Ondansetron Hydrochloride', 'Tablet / Injection', '4 mg; 8 mg and 2 mg/ml'),
+      p('granistron-tablet', 'Granistron Hydrochloride', 'Tablet', '1 mg and 2 mg'),
+      p('granistron-injection', 'Granistron Hydrochloride', 'Injection', '1 mg and 3 mg per ml vials'),
+      p('esomeprazole-domperidone', 'Esomeprazole + Domperidone SR', 'Capsule', '40 mg + 30 Mg'),
+      p('esomeprazole-magnesium', 'Esomeprazole Magnesium', 'Injection / Tablet/ Capsule', '40mg/5ml ; 20 mg ; 40 mg'),
+      p('lansoprazole', 'Lansoprazole', 'Capsule', '15 mg; 30 mg'),
+    ],
+  },
+  {
+    slug: 'analgesic-anti-inflammatory-antipyretic',
+    name: 'Analgesic, Anti-inflammatory and Antipyretic',
+    products: [
+      p('diclofanac', 'Diclofanac Sodium', 'Injection', '25 mg; 50 mg /ml'),
+      p('paracetamol-bp', 'Paracetamol BP 500 Mg', 'Tablet', '500 mg'),
+      p('paracetamol-solution', 'Paracetamol Oral solution', 'SYRUP', '120 mg per 5 ml'),
+      p('aceclofenac-paracetamol-serratio', 'Aceclofenac + Paracetamol + Serratiopeptidase*', 'Tablet', '100 mg + 500 mg + 15 mg'),
+      p('paracetamol-diclofenac-serratio-magnesium', 'Paracetamol + Diclofenac + Serratiopeptidase + Magnesium', 'Tablet', '500 mg + 50 mg + 10 mg + 100 mg'),
+      p('paracetamol-diclofenac-potassium-chlorzoxazone', 'Paracetamol + Diclofenac Potassium + Chlorzoxazone', 'Tablet', '500 mg + 50 mg + 250 mg'),
+      p('tramadol-injection', 'Tramadol Hydrochloride', 'Injection', '50 mg/ml'),
+      p('tramadol-tablet', 'Tramadol', 'Tablet', '50 mg, 100 mg'),
+      p('indomethacin', 'Indomethacin', 'Tablet / Capsule', '25 mg, 50 mg'),
+      p('meloxicam', 'Meloxicam', 'Tablet', '7.5 mg, 15 mg'),
+      p('piroxicam', 'Piroxicam', 'capsule', '10 mg ; 20 mg'),
+      p('tizanidine', 'Tizanidine', 'Tablet', '2 mg; 4 mg'),
+      p('diacerin', 'Diacerin', 'capsule', '50 mg'),
+      p('paracetamol-chlorpheniramine-caffeine', 'Paracetamol+ Chlorpheniramine Maleate+ Caffeine Anhydrous +', 'Tabs/Caps', '500mg+2mg+25mg+5mg'),
+    ],
+  },
+  {
+    slug: 'corticosteroid',
+    name: 'Corticosteroid',
+    products: [
+      p('betamethasone', 'Betamethasone', 'Tablet', '0.5 mg, 1 mg'),
+      p('dexamethasone', 'Dexamethasone Sodium Phosphate', 'Tablet / Injection', '0.5 mg, 1 mg; 4 mg/ml'),
+      p('methyl-prednisolone', 'Methyl Prednisolone', 'Tablet', '4 mg, 8 mg, 16 mg'),
+      p('prednisolone', 'Prednisolone', 'Tablet', '5 mg, 10 mg, 20 mg, 40 mg'),
+      p('triamcinolone', 'Triamcinolone', 'Tablet', '4 mg'),
+    ],
+  },
+  {
+    slug: 'antidiabetic',
+    name: 'Antidiabetic',
+    products: [
+      p('empagliflozin', 'Empagliflozin', 'Tablet', '5 mg ; 10 mg ; 25 mg'),
+      p('empagliflozin-metformin', 'Empagliflozin + Metformin', 'Tablet', '12.5 mg + 500 mg; 12.5 mg +850 mg ; 12.5 mg + 1000 mg'),
+      p('atorvastatin', 'Atorvastatin', 'Tablet', '10 mg ; 20 mg ; 40 mg'),
+      p('glibenclamide', 'Glibenclamide', 'Tablet', '2.5 mg, 5 mg'),
+      p('glibenclamide-metformin', 'Glibenclamide + Metformin Hydrochloride', 'Tablet', '2.5 mg + 400 mg, 5 mg + 400 mg'),
+      p('gliclazide', 'Gliclazide', 'Tablet', '30 mg, 80 mg'),
+      p('gliclazide-metformin', 'Gliclazide + Metformin Hydrochloride', 'Tablet', '30 mg + 500 mg, 80 mg + 500 mg'),
+      p('gliclazide-metformin-rosiglitazone', 'Gliclazide + Metformin Hydrochloride + Rosiglitazone Maleate', 'Tablet', '40 mg + 500 mg + 2 mg, 80 mg + 500 mg + 2 mg'),
+      p('glimepiride', 'Glimepiride', 'Tablet', '1 mg, 2 mg, 4 mg'),
+      p('glimepiride-metformin', 'Glimepiride + Metformin Hydrochloride', 'Tablet', '1 mg + 500 mg, 2 mg + 500 mg'),
+      p('glimepiride-pioglitazone', 'Glimepiride + Pioglitazone', 'Tablet', '1 mg + 15 mg, 2 mg + 15 mg'),
+      p('glipizide-metformin', 'Glipizide + Metformin Hydrochloride', 'Tablet', '5 mg + 500 mg'),
+      p('metformin', 'Metformin Hydrochloride', 'Tablet', '500 mg ; 850 mg ; 1000 mg'),
+      p('pioglitazone', 'Pioglitazone', 'Tablet', '15 mg, 30 mg'),
+      p('pioglitazone-metformin', 'Pioglitazone + Metformin Hydrochloride', 'Tablet', '15 mg + 500 mg, 30 mg + 500 mg'),
+      p('sitagliptin', 'Sitagliptin', 'Tablet', '25 mg; 50 mg; 100 mg; 200 mg'),
+      p('vidagliptin-metformin', 'Vidagliptin + Metformin', 'Tablet', '500 mg'),
+    ],
+  },
+  {
+    slug: 'antiallergic-antihistamine',
+    name: 'Antiallergic / Antihistamine',
+    products: [
+      p('fexofenadine', 'Fexofenadine', 'Tablet', '30mg, 60mg, 180mg'),
+      p('cetrizine', 'Cetrizine Hydrochloride', 'Tablet', '10 mg ; 20 mg'),
+      p('hexetidine-choline-salicylate', 'Hexetidine + Choline Salicylate + Antihistamine Chlorobutanole', 'Solution, Spray', '0.1g + 0.5g + 0.25g'),
+      p('levocetirizine-tablet', 'Levocetirizine Hydrochloride', 'Tablet', '5 mg and 10 mg'),
+      p('montelukast-levocetirizine', 'Montelukast sodium + Levocetrizine Dihydrochloride', 'Tablet', '10 mg + 20 mg'),
+      p('levocetirizine-syrup', 'Levocetirizine Hydrochloride', 'Syrup', '10 mg and 5mg / 5ml'),
+      p('salbutamol-bromhexine-phenylephrine', 'Salbutamol + Bromhexine HCl + Phenylephrine HCl', 'Syrup', '4mg + 8mg + 5mg'),
+      p('bromhexine-suspension', 'Bromhexine Hydrochloride', 'Suspension', '4mg/5 ml'),
+      p('terbutaline-bromhexine-guaifenesin', 'Terbutaline Sulphate + Bromhexine Hydrochloride + Guaifenesin', 'Suryp', '2 mg + 50 mg + 1.25 mg per 5 ml'),
+    ],
+  },
+  {
+    slug: 'antispasmodic',
+    name: 'Antispasmodic',
+    products: [
+      p('atropine', 'Atropine Sulphate', 'Injection', '0.1 mg / ml; 0.05mg /ml'),
+      p('dicyclomine-injection', 'Dicyclomine Hydrochloride', 'Injection', '10 mg / ml'),
+      p('dicyclomine-paracetamol', 'Dicyclomine + Paracetamol', 'Syrup', '10 mg + 500 mg'),
+      p('drotaverine', 'Drotaverine Hydrochloride', 'Tablet', '40mg'),
+      p('metoclopramide', 'Metoclopramide Hydrochloride', 'Injection', '10 mg / ml'),
+    ],
+  },
+  {
+    slug: 'antihypertensive',
+    name: 'Antihypertensive',
+    products: [
+      p('amlodipine', 'Amlodipine Besilate', 'Tablet', '5mg ; 10 mg'),
+      p('atenolol', 'Atenolol', 'Tablet', '25 mg ; 50 mg'),
+      p('enalapril', 'Enalapril Maleate', 'Tablet', '5 mg, 10 mg'),
+      p('losartan', 'Losartan Potassium', 'Tablet', '25 mg ; 50 mg'),
+      p('losartan-hctz', 'Losartan Potassium + Hydrochloro Thiazide', 'Tablet', '50 mg + 12.5 mg'),
+      p('methyldopa', 'Methyldopa', 'Tablet', '250 mg'),
+      p('metoprolol', 'Metoprolol', 'Tablet', '25 mg; 50 mg ; 100 mg'),
+      p('nebivolol', 'Nebivolol', 'Tablet', '2.5 mg; 5 mg'),
+      p('s-amlodipine', 'S?Amlodipine Besilate', 'Tablet', '2.5 mg ;5 mg'),
+      p('s-amlodipine-atenolol', 'S?Amlodipine Besilate + Atenolol', 'Tablet', '2.5 mg + 50 mg ; 5 mg + 50 mg'),
+      p('s-amlodipine-losartan', 'S?Amlodipine Besilate + Losartan Potassium', 'Tablet', '5 mg + 50 mg'),
+      p('telmisartan', 'Telmisartan', 'Tablet', '20 mg ; 40 mg'),
+      p('clopidogrel', 'Clopidogrel Bisulphate', 'Tablet', '75 mg'),
+      p('captopril', 'Captopril', 'Tablet', '25 mg ; 50 mg'),
+    ],
+  },
+  {
+    slug: 'antifungal',
+    name: 'Antifungal',
+    products: [
+      p('fluconazole', 'Fluconazole', 'Capsule', '150mg/200 mg'),
+      p('ketoconazole', 'Ketoconazole', 'Tablet', '200 mg'),
+      p('isotretinoin', 'Isotretinoin', 'Capsule Soft gel Capsules', '20mg, 30mg, 40 mg'),
+      p('itraconazole', 'Itraconazole', 'Tablet', '100 mg and 200 mg'),
+      p('co-trimoxazole', 'Co-trimoxazole', 'Suspension', '200 mg /ml'),
+    ],
+  },
+  {
+    slug: 'erectile-dysfunction',
+    name: 'Erectile Dysfunction',
+    products: [
+      p('sildenafil-citrate', 'Sildenafil Citrate', 'Tablet/Oral Jelly', '50 mg ; 100 mg'),
+      p('tadalafil', 'Tadalafil', 'Tablet / Oral Jelly', '10 mg ; 20 mg'),
+      p('dapoxetine', 'Dapoxetine', 'Tablet Tablet', '30 mg, 60 mg'),
+    ],
+  },
+  {
+    slug: 'oncology',
+    name: 'Oncology',
+    products: [
+      p('erlotinib', 'Erlotinib', 'Tablet', '100 mg; 150 mg; 200 mg'),
+      p('methotrexate', 'Methotrexate', 'Tablet', '2.5 mg; 5 mg; 10 mg'),
+      p('tamoxifen', 'Tamoxifen', 'Tablet', '10 mg; 20 mg'),
+      p('gemicitabine', 'Gemicitabine', 'Injection', '200 mg; 1000 mg'),
+      p('oxaliplatin', 'Oxaliplatin', 'Injection', '50 mg; 100 mg ; 200 mg'),
+      p('paclitaxel', 'Paclitaxel', 'Injection', '30 mg; 100 mg; 260 mg ; 300 mg'),
+    ],
+  },
+  {
+    slug: 'nutraceutical-and-herbal',
+    name: 'Nutraceutical and Herbal',
+    products: [
+      p('vitamin-b1-b6-b12-d-panthenol', 'Vitamin B1 + B6 + B12 + D panthenol', 'Syrup', ''),
+      p('thiamine-cyanocobalamin', 'Thiamine Mononitrate (B1) + Cyanocobalamin (B12) + D-Panthenol (B5) + Pyridoxine Hcl (B6)', 'Syrup', '20 mg + 2 mcg + 25 mg + 10 mg'),
+      p('iron-folic-b12-zinc', 'Iron + Folic acid + Vitamin B12 + Zink', 'Syrup', 'Ferric Ammonium Citrate 160 mg + Vitamin B12 5 mcg + Folic Acid 1 mg + Zinc Sulphate 30 mcg'),
+      p('evening-primerose-oil', 'Evening primerose oil', 'capsule', '500 mg; 1000 mg'),
+      p('iron-vitamins-zinc', 'Iron, Vitamins with Zink', 'capsule', 'Ferric Ammonium Citrate IP 160 mg (Equi. To Elemental Iron 32.8 mg) + Vitamin B12 IP 7.5 mcg + Folic Acid IP 0.5 mg + Zinc Sulphate Monohydrate IP 20.61 mg + (Equi. To Elemental Zinc 7.5 mg)'),
+      p('vitamin-a', 'Vitamin A', 'capsule', '25000 IU'),
+      p('vitamin-e', 'Vitamin E', 'Capsule', '200 mg; 400 mg; 600 mg'),
+      p('pregabalin-methylcobalamin', 'Pregabalin + Methylcobalamin', 'capsule', '75 Mg + 500 mcg ; 150 Mg + 750 mcg'),
+      p('gabapentin-methylcobalamin', 'Gabapentin + Methylcobalamin', 'Tablet', '300 mg + 500 mcg'),
+      p('methylcobalamin-alpha-lipoic', 'Methylcobalamin + Alpha Lipoic Acid + folic acid + pyridoxine Hydrochloride', 'capsule', '75 mg + 100 mg + 1.5 mg + 3 mg'),
+      p('ferrous-ascorbate-softgel', 'FERROUS ASCORBATE, FOLIC ACID ,METHYLCOBALAMIN ,ZINC SOFTGEL', 'capsule', 'Ferrous Ascorbate eq. to Elemantal Iron 100 mg ,Methylcobalamin 1500 mcg , Folic Acid 1.5 mg, DHA 20 mg'),
+      p('multivitamin-multimineral', 'MULTIVITAMIN & MULTIMINERAL', 'capsule', 'Ferric Ammonium Citrate USP 160 mg ,Vitamin B12 BP 7.5 mcg, Folic Acid BP 0.5 mg ,Zinc Sulphate Monohydrate USP 20.61 mg'),
+      p('betacarotene-vitamins-minerals', 'Betacarotene,Vitamin C,Vitamin E, Zinc oxide,Sodium selenate,Cupric oxide,Manganese sulphate', 'capsule', 'Betacarotene 30mg + Vitamin C 150mg + Vitamin E Acetate 25mg + Zinc oxide Eq.to Zinc 40mg + Sodium selenate eq.to selenium 200mcg + Cupric oxide eq.to copper2mg + Manganese sulphate eq.to manganese 5mg'),
+      p('calcitriol-calcium-zinc-magnesium', 'Calcitriol,Calcium Citrate Maleate,Zinc Oxide,Magnesium Oxide', 'capsule', 'Calcitriol 0.25mcg , Calcium Citrate Maleate 500mg, Zinc Oxide 7.5mg, Magnesium Oxide 50mg'),
+      p('methylcobalamin-injection', 'Methylcobalamin', 'Injection', '1500 mcg and 2500 mcg'),
+      p('curcumin', 'Curcumin', 'capsule', '500 mg, 100 mg and 1500 Mg'),
+      p('curcumin-piperine', 'Curcumin + Piperine', 'capsule', '500 Mg + 5 Mg capsule'),
+      p('garcinia-cambogia', 'Garcinia Cambogia', 'Tablet', '500 mg; 700 Mg tablet'),
+      p('seena-suspension', 'Seena', 'Suspension', '8.8 mg/5Ml'),
+      p('seena-tablet', 'Seena', 'Tablet', '7.5 mg and 15 Mg'),
+      p('natural-caffeine', 'Natural caffeine', 'Tablet', '100 mg and 200 mg'),
+    ],
+  },
+  {
+    slug: 'veterinary',
+    name: 'Veterinary',
+    products: [
+      p('diminazen-b12', 'Diminazen Aceturate, Phenazone & Vitamin B12 Injection', 'Injection', '75mg +375mg+0.06mg; 10 Ml and 50 Ml'),
+      p('diminazen-phenazone', 'Diminazen Aceturate Phenazone Injection', 'Injection', '90 ml'),
+      p('diminazen', 'Diminazen aceturate Injection', 'Injection', '30 ml and 100 ml'),
+      p('albendazole-oxyclonazide', 'Albendazole + Oxyclonazide', 'Tablet', '175 mg + 360 mg'),
+      p('albendazole-oxyclozanide', 'Albendazole + Oxyclozanide', 'Tablet', '600 mg + 300 Mg'),
+      p('albendazole-bolus', 'Albendazole Bolus', 'Tablet', '300 mg ; 600 mg'),
+      p('acepromazine', 'Acepromazine maleate (ACP)', 'Injection', '12 mg'),
+      p('doxycycline-neomycin', 'Doxycycline Hyclate + Neomycin Sulfate BP', 'Tablet', '100 mg + 100 mg'),
+      p('fenbendazole-750', 'Fenbendazole 750mg', 'Tablet', '750 mg; 1500 mg'),
+      p('fenbendazole-ivermectin', 'Fenbendazole BP + Ivermectin BP 100mg', 'Tablet', '3 gm + 100 mg'),
+      p('amoxycillin-clavulanate', 'Amoxycillin Trihydrate + Potassium Clavulanate 100 mg', 'Tablet', '400 mg + 100 mg'),
+      p('ciprofloxacin-tinidazole', 'Ciprofloxacin HCl + Tinidazole', 'Tablet', '250 mg + 300 Mg'),
+      p('bromhexine-tablet', 'Bromhexine hydrochloride', 'Tablet', '8 mg'),
+      p('bromhexine-powder', 'Bromhexine hydrochloride', 'Powder', '100 Gm'),
+      p('triclabendazole-tablet', 'Triclabendazole', 'Tablet', '250 mg and 500 mg'),
+      p('triclabendazole-suspension', 'Triclabendazole', 'Suspension', '500 Ml, 800 Ml and 1 Lt'),
+      p('oxyclozanide-suspension', 'Oxyclozanide', 'Suspension', '100 Ml, 500 Ml and 1 Lt'),
+      p('oxyclozanide-capsule', 'Oxyclozanide', 'capsule', '600 Mg, 750 Mg and 1000MG'),
+    ],
+  },
+];
+
+export const ALL_PRODUCTS = PRODUCT_CATEGORIES.flatMap((category) =>
+  category.products.map((product) => ({ ...product, category: category.name, categorySlug: category.slug }))
+);
+
+export const PRODUCT_CATEGORY_MAP = Object.fromEntries(
+  PRODUCT_CATEGORIES.map((category) => [category.slug, category])
+) as Record<string, ProductCategory>;
